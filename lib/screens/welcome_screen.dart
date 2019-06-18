@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flash_chat/constants.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  String id = 'welcome_screen';
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
@@ -9,7 +12,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kBackgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -23,9 +26,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 60.0,
                 ),
                 Text(
-                  'Flash Chat',
+                  'Banda Chat',
                   style: TextStyle(
-                    fontSize: 45.0,
+                    fontFamily: 'Open Sans Condensed',
+                    fontSize: 60.0,
                     fontWeight: FontWeight.w900,
                   ),
                 ),
@@ -38,7 +42,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
                 elevation: 5.0,
-                color: Colors.lightBlueAccent,
+                color: kLightAccentColor,
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
                   onPressed: () {
@@ -48,6 +52,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 42.0,
                   child: Text(
                     'Log In',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                    ),
                   ),
                 ),
               ),
@@ -55,7 +62,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.blueAccent,
+                color: kDarkAccentColor,
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
@@ -66,6 +73,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 42.0,
                   child: Text(
                     'Register',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                    ),
                   ),
                 ),
               ),

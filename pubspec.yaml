@@ -21,3 +21,9 @@ flutter:
 
   assets:
   - images/
+
+  fonts:
+  - family: Open Sans Condensed
+    fonts:
+      - asset: fonts/OpenSansCondensed-Light.ttf
+      - asset: fonts/OpenSansCondensed-Bold.ttf
