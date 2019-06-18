@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.2
+  flutter_svg: ^0.12.0
 
 dev_dependencies:
   flutter_test:
@@ -23,7 +24,11 @@ flutter:
   - images/
 
   fonts:
-  - family: Open Sans Condensed
+  - family: Open Sans C
     fonts:
       - asset: fonts/OpenSansCondensed-Light.ttf
       - asset: fonts/OpenSansCondensed-Bold.ttf
+
+  - family: Montserrat
+    fonts:
+      - asset: fonts/Montserrat-Regular.ttf

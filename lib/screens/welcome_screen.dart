@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class WelcomeScreen extends StatefulWidget {
   String id = 'welcome_screen';
@@ -19,19 +20,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
+            Column(
               children: <Widget>[
-                Container(
-                  child: Image.asset('images/logo.png'),
-                  height: 60.0,
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: SizedBox.fromSize(
+                    child: SvgPicture.asset(
+                      'images/svglogo.svg',
+                    ),
+                    size: Size(110.0, 110.0),
+                  ),
                 ),
                 Text(
-                  'Banda Chat',
+                  'JS Fintess',
                   style: TextStyle(
-                    fontFamily: 'Open Sans Condensed',
-                    fontSize: 60.0,
-                    fontWeight: FontWeight.w900,
-                  ),
+                      fontFamily: kFontFamily,
+                      fontSize: 60.0,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white),
                 ),
               ],
             ),
@@ -53,6 +59,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: Text(
                     'Log In',
                     style: TextStyle(
+                      fontFamily: kFontFamily,
                       fontSize: 18.0,
                     ),
                   ),
@@ -74,6 +81,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: Text(
                     'Register',
                     style: TextStyle(
+                      fontFamily: kFontFamily,
                       fontSize: 18.0,
                     ),
                   ),
