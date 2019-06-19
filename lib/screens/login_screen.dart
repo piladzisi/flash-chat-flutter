@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
 
 class LoginScreen extends StatefulWidget {
-  String id = 'login_screen';
+  static const id = 'login_screen';
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -18,9 +18,12 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              height: 200.0,
-              child: Image.asset('images/logo.png'),
+            Hero(
+              tag: 'logo',
+              child: Container(
+                height: 180.0,
+                child: Image.asset('images/logo.png'),
+              ),
             ),
             SizedBox(
               height: 48.0,
@@ -76,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: kDarkAccentColor,
+                color: kLightAccentColor,
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(

@@ -7,6 +7,7 @@ const kLightColor = Color(0xFF0295CE);
 const kDarkAccentColor = Color(0xFF07D1BF);
 const kLightAccentColor = Color(0xFF60F4A0);
 const kBackgroundColor = Color(0xFF001525);
+const kFontFamily = 'Open Sans Condensed';
 
 const kSendButtonTextStyle = TextStyle(
   color: kLightAccentColor,
