@@ -3,6 +3,7 @@ import 'package:flash_chat/constants.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flash_chat/long_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const id = 'welcome_screen';
@@ -25,12 +26,10 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     animation =
         ColorTween(begin: kDarkAccentColor.withAlpha(40), end: kBackgroundColor)
             .animate(controller);
-
     controller.forward();
 
     controller.addListener(() {
       setState(() {});
-      print(animation.value);
     });
   }
 
@@ -72,54 +71,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             SizedBox(
               height: 48.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: kLightAccentColor,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
-                    );
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Log In',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                    ),
-                  ),
-                ),
-              ),
+            LongButton(
+              title: 'Log in',
+              color: kLightAccentColor,
+              onPressed: () {
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
+            LongButton(
+                title: 'Register',
                 color: kDarkAccentColor,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RegistrationScreen()));
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                onPressed: () {
+                  Navigator.pushNamed(context, RegistrationScreen.id);
+                }),
           ],
         ),
       ),
