@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flash_chat/message_stream.dart';
 
 final firestore = Firestore.instance;
+FirebaseUser loggedInUser;
 
 class ChatScreen extends StatefulWidget {
   static const id = 'chat_screen';
@@ -17,7 +18,7 @@ class _ChatScreenState extends State<ChatScreen> {
   String messageText;
 
   final _auth = FirebaseAuth.instance;
-  FirebaseUser loggedInUser;
+
   @override
   void initState() {
     super.initState();
